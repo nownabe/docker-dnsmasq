@@ -5,5 +5,5 @@ RUN apk add --no-cache --update dnsmasq \
   && mkdir /etc/dnsmasq.d
 COPY dnsmasq.conf /etc/dnsmasq.conf
 
-EXPOSE 53
-CMD /usr/sbin/dnsmasq --no-daemon
+EXPOSE 53 53/udp
+CMD /usr/sbin/dnsmasq --keep-in-foreground
